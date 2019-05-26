@@ -1,0 +1,7 @@
+<form action="" method="POST">
+	{% csrf_token %}
+	<input name='nrp' type='text' value='{{ detail_mhs.nrp }}'>
+	<input name='nama' type='text' value='{{ detail_mhs.nama }}'>
+	<input name='umur' type='number' value='{{ detail_mhs.umur }}'>
+	<input name='submit' type='submit'>
+</form>

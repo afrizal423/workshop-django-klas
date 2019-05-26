@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Heloo</title>
+</head>
+<body>
+	<a href="{% url 'insert' %}">Insert data</a> 
+	{% if mahasiswa_list %}
+	<table>
+		<tr>
+			<th>NRP</th>
+			<th>Nama</th>
+			<th>Umur</th>
+		<tr>
+		{% for mahasiswa in mahasiswa_list %}
+		<tr>
+			<td>{{ mahasiswa.nrp }}</td>
+			<td>{{ mahasiswa.nama }}</td>
+			<td>{{ mahasiswa.umur }}</td>
+			<td><a href="{% url 'update' mahasiswa.nrp %}">Update</td>
+			<td><a href="{% url 'delete' mahasiswa.nrp %}">Delete</td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+		<h1>Data KOsong</h1>
+	{% endif %}	
+</body>
+</html>
